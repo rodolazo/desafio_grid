@@ -1,0 +1,139 @@
+body,
+h1,
+h2,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto";
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 100px 1fr 50px;
+  height: 100vh;
+  grid-template-areas:
+    "header header header header header"
+    "sidebar content content content content"
+    "footer footer footer footer footer";
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #999;
+  border-bottom: 1px solid #444;
+}
+
+.sidebar {
+  background-color: white;
+  color: black;
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+
+.sidebar__titulo {
+  color: #444;
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+
+.sidebar__lista {
+  list-style: none;
+}
+
+.sidebar__elemento {
+  padding-bottom: 15px;
+}
+
+.sidebar__cantidad {
+  color: #777;
+  font-size: small;
+}
+
+.content {
+  background-color: lightgrey;
+  grid-area: content;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: repeat(2, 1fr);
+  padding: 10px;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card__title {
+  font-weight: 700;
+  font-size: 24px;
+  padding-top: 14px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.card__price {
+  font-weight: normal;
+  font-size: 14px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.card__tachado {
+  text-decoration: line-through;
+  font-size: small;
+  color: #999;
+}
+
+.card__buttom {
+  display: flex;
+  background-color: darkblue;
+  width: 100%;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.card__buttom:hover {
+  background-color: orange;
+  color: black;
+}
+
+.footer {
+  display: grid;
+  place-content: center;
+  background-color: black;
+  color: white;
+  grid-area: footer;
+}
